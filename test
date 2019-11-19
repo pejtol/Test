@@ -1,0 +1,21 @@
+pytanie = "Dlaczego lubisz programowanie: "
+pytanie += '\n (Napisz q aby zakonczyć)'
+
+listaodpowiedzi = []
+filename2 ='programming2.txt'
+ON = True
+
+while ON:
+    question = input(pytanie)
+    listaodpowiedzi.append(question)
+    
+    if question == 'q':
+        break
+    
+    
+for x in listaodpowiedzi:
+    if x == 'q':
+        listaodpowiedzi.remove('q')
+        
+with open(filename2, 'w') as asdf:
+    asdf.write(str(listaodpowiedzi))

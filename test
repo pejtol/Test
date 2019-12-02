@@ -17,7 +17,7 @@ def PanstwaMiasta():
         populacja = input('Proszę podać szacowaną populację: ')
         
         while not populacja.isnumeric():
-            print("Poproszę o numer")
+            print("Poproszę o liczbę")
             populacja = input("Proszę poprawić: ")
        
         
@@ -34,6 +34,6 @@ def PanstwaMiasta():
         
         
     for panstwo, miasto in slownik.items():
-        print("\nTwoje panstwo to: " + panstwo + ', a miasto to: ' + miasto +' a szacowana populacja to: ')
+        print("\nTwoje panstwo to: " + panstwo + ', miasto to: ' + miasto +' a szacowana populacja to: ')
     print('- ' + populacja)
         

@@ -1,21 +1,39 @@
-pytanie = "Dlaczego lubisz programowanie: "
-pytanie += '\n (Napisz q aby zakonczyć)'
 
-listaodpowiedzi = []
-filename2 ='programming2.txt'
-ON = True
+slownik ={}
 
-while ON:
-    question = input(pytanie)
-    listaodpowiedzi.append(question)
-    
-    if question == 'q':
-        break
-    
-    
-for x in listaodpowiedzi:
-    if x == 'q':
-        listaodpowiedzi.remove('q')
+def PanstwaMiasta():
+    ON = True
+    while ON:
         
-with open(filename2, 'w') as asdf:
-    asdf.write(str(listaodpowiedzi))
+        panstwo = input('Proszę podać nazwę panstwa: ')
+        while panstwo.isnumeric():
+            print("Poproszę o nazwę")
+            panstwo = input("Proszę poprawić: ")
+        miasto = input('Proszę podać nazwę miasta: ')
+        while miasto.isnumeric():
+            print("Poproszę o nazwę")
+            miasto = input("Proszę poprawić: ")
+            
+        populacja = input('Proszę podać szacowaną populację: ')
+        
+        while not populacja.isnumeric():
+            print("Poproszę o numer")
+            populacja = input("Proszę poprawić: ")
+       
+        
+        
+        slownik[panstwo] = miasto
+       
+        
+        pytanie = input('Czy dalej chcesz wpisaywac Panstwa i Miasta? T/N')
+        
+        if pytanie == 'T':
+            pass
+        if pytanie == 'N':
+            ON = False
+        
+        
+    for panstwo, miasto in slownik.items():
+        print("\nTwoje panstwo to: " + panstwo + ', a miasto to: ' + miasto +' a szacowana populacja to: ')
+    print('- ' + populacja)
+        

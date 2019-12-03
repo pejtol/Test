@@ -1,39 +1,28 @@
-
-slownik ={}
-
 def PanstwaMiasta():
     ON = True
+    wyniki = []
     while ON:
-        
-        panstwo = input('Proszę podać nazwę panstwa: ')
+        panstwo = input("Proszę podać nazwę panstwa: ")
         while panstwo.isnumeric():
             print("Poproszę o nazwę")
             panstwo = input("Proszę poprawić: ")
-        miasto = input('Proszę podać nazwę miasta: ')
+        miasto = input("Proszę podać nazwę miasta: ")
         while miasto.isnumeric():
             print("Poproszę o nazwę")
             miasto = input("Proszę poprawić: ")
-            
-        populacja = input('Proszę podać szacowaną populację: ')
-        
+        populacja = input("Proszę podać szacowaną populację: ")
         while not populacja.isnumeric():
             print("Poproszę o liczbę")
             populacja = input("Proszę poprawić: ")
        
-        
-        
-        slownik[panstwo] = miasto
+        wyniki.append((panstwo, miasto, populacja))
+ 
+        pytanie = input("Czy dalej chcesz wpisywac Panstwa i Miasta? T/N")
        
-        
-        pytanie = input('Czy dalej chcesz wpisaywac Panstwa i Miasta? T/N')
-        
-        if pytanie == 'T':
+        if pytanie == "T":
             pass
-        if pytanie == 'N':
+        if pytanie == "N":
             ON = False
-        
-        
-    for panstwo, miasto in slownik.items():
-        print("\nTwoje panstwo to: " + panstwo + ', miasto to: ' + miasto +' a szacowana populacja to: ')
-    print('- ' + populacja)
-        
+ 
+    for panstwo, miasto, populacja in wyniki:
+        print(f"Twoje panstwo to: {panstwo}, miasto to: {miasto}, a szacowana populacja to: {populacja}.")
